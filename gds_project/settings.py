@@ -43,10 +43,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework_simplejwt',
     'corsheaders',
 
-    'addorders',
-    'distribution',
     'orders',
 ]
 
@@ -94,6 +93,12 @@ DATABASES = {
         'HOST': 'localhost',  # або IP сервера, якщо не локально
         'PORT': '5432',       # стандартний порт PostgreSQL
     }
+}
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
 }
 
 
